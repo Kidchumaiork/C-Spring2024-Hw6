@@ -5,13 +5,13 @@ using namespace std;
 
 template <typename T>
 
-void maximum(const T &a, const T &b)
+void maximum(const T &a, const T &b) // using string instead of void is fine but need to change 'cout' to 'return'
 {
-    if constexpr (is_same_v<T, string>)
-    { // Check if the type T is a string
+    if constexpr (is_same_v<T, string>) // Check if the type T is a string
+    {
         if (a.length() != b.length())
         {
-            const T &value = (a.length() < b.length()) ? b : a;
+            const T &value = (a.length() < b.length()) ? b : a; // compare both string value
             cout << value << " has more characters.\n";
         }
         else
@@ -21,7 +21,7 @@ void maximum(const T &a, const T &b)
     }
     else
     {
-        const T &value = (a < b) ? b : a;
+        const T &value = (a < b) ? b : a; // compare both value which need to be number(float or int)
         if (a != b)
         {
             cout << value << " is bigger.\n";
